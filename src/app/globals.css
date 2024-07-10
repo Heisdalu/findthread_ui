@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.lol {
+  background-image: url("../../public/bg.svg");
+}

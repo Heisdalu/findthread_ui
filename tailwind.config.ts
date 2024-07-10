@@ -13,6 +13,16 @@ const config: Config = {
       2: "2rem",
       "1.5": "1.5rem",
     },
+    backgroundImage: {
+      "hero-sm-pattern": "url(../../public/bg.svg)",
+      "hero-lg-pattern": "url(../../public/bbg.svg)",
+    },
+    borderWidth: {
+      1: "1px",
+    },
+    borderColor: {
+      1: "#000",
+    },
   },
   plugins: [],
 };
