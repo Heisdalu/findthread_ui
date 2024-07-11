@@ -2,10 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.lol {
-  background-image: url("../../public/bg.svg");
+.space {
+  margin-left: 7px;
+  display: block;
 }
 
 .remove_pad {
   @apply lg:[padding:0];
+}
+
+.fill svg path {
+  fill: black;
 }
