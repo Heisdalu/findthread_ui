@@ -15,6 +15,17 @@ const effraFont = localFont({
   adjustFontFallback: "Arial",
 });
 
-export { effraFont as effra };
+const goodDogNew = localFont({
+  src: [
+    {
+      path: "../fonts/GoodDog_new.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  adjustFontFallback: "Times New Roman",
+});
+
+export { effraFont as effra, goodDogNew };
 
 // border-[#fff] border-[1px]
