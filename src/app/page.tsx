@@ -14,7 +14,7 @@ import { data } from "./data";
 export default function Home() {
   return (
     <div>
-      <div className=" border-1 bg-black relative">
+      <div className="bg-black relative">
         <div className="xl:max-w-[1400px] xl:mx-auto h-[100%] bg-no-repeat bg-center bg-hero-sm-pattern md:bg-hero-lg-pattern">
           <div className="relative lg:py-[1rem] lg:pr-[2rem] xl:px-[3rem] lg:flex lg:justify-between items-center">
             <NavBar />
@@ -42,7 +42,7 @@ export default function Home() {
                 Get Started 🔥
               </button>
 
-              <div className="hidden md:block border-[1px] w-[100px] text-center absolute top-[40%] translate-y-[-50%] left-[100%] translate-x-[20px] space-y-[3px]">
+              <div className="hidden md:block w-[100px] text-center absolute top-[40%] translate-y-[-50%] left-[100%] translate-x-[20px] space-y-[3px]">
                 <p
                   className={`text-white rotate-[6deg] ${goodDogNew.className} flex flex-col text-[0.875rem]`}
                 >
@@ -55,7 +55,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="py-[2rem] flex justify-center items-center border-[1px] border-[#fff] xl:max-w-[1100px] m-auto xl:pb-[5rem] ">
+            <div className="py-[2rem] flex justify-center items-center xl:max-w-[1100px] m-auto xl:pb-[5rem] ">
               <Label />
             </div>
           </header>
@@ -126,7 +126,7 @@ export default function Home() {
         </div>
       </Wrapper>
       <Wrapper classText="bg-white">
-        <div className="flex flex-col border-1 px-[1.125rem] py-[3rem] lg:py-[5rem] space-y-[2rem] md:space-y-[3rem]">
+        <div className="flex flex-col px-[1.125rem] py-[3rem] lg:py-[5rem] space-y-[2rem] md:space-y-[3rem]">
           <h1 className="text-[2rem] font-bold flex flex-col text-center leading-[112%] text-black md:flex-row md:justify-center md:text-[3rem] xl:text-[4rem]">
             <span>Findtrend make</span>
             <span className="space">+1000 Startup grow</span>

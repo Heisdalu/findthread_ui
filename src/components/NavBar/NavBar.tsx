@@ -4,7 +4,7 @@ import Logo from "../assets/Logo";
 function NavBar() {
   return (
     <>
-      <div className="border-[#fff] z-[10] border-[1px] px-[1.125rem] py-[1.5rem] flex items-center">
+      <div className=" z-[10] border-[1px] px-[1.125rem] py-[1.5rem] flex items-center">
         <Logo />
         <div className="ml-auto lg:hidden">
           <HamBurger />
