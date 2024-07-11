@@ -23,7 +23,7 @@ const data = [
     name: "Elon Musk - Search",
     path: "dribble.png",
     classText:
-      "rotate-[4deg] relative  z-[2] border-[#fff] xl:translate-y-[45px] xl:translate-x-[-90px]",
+      "rotate-[4deg] relative  z-[2] border-[#fff] xl:translate-y-[50px] xl:translate-x-[-90px]",
   },
 ];
 

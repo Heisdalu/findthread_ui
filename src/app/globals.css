@@ -5,3 +5,7 @@
 .lol {
   background-image: url("../../public/bg.svg");
 }
+
+.remove_pad {
+  @apply lg:[padding:0];
+}

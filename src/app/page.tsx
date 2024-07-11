@@ -3,18 +3,17 @@ import Label from "@/components/Labels/Label";
 import Arrow from "@/components/assets/Arrow";
 import Logo from "@/components/assets/Logo";
 import { goodDogNew } from "@/app/font";
+import NavBar from "@/components/NavBar/NavBar";
 
 export default function Home() {
   return (
     <div>
-      <div className=" border-1 bg-black">
+      <div className=" border-1 bg-black relative">
         <div className="xl:max-w-[1400px] xl:mx-auto h-[100%] bg-no-repeat bg-center bg-hero-sm-pattern md:bg-hero-lg-pattern">
-          <div className="border-[#fff] border-[1px] px-[1.125rem] py-[1.5rem] flex items-center">
-            <Logo />
-            <div className="ml-auto">
-              <HamBurger />
-            </div>
+          <div className="relative lg:py-[1rem] lg:pr-[2rem] xl:px-[3rem] lg:flex lg:justify-between items-center">
+            <NavBar />
           </div>
+
           <header className="flex flex-col py-[2rem] px-[1rem] space-y-[1rem]">
             <h1 className="text-white text-center font-[700] text-[2.25rem] flex flex-col md:text-[3.7rem] lg:text-[4.5rem]">
               <span className="leading-[112%]">Minimize your tabs.</span>
