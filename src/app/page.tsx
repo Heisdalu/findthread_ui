@@ -9,7 +9,7 @@ import Close from "@/components/assets/Close";
 import ArrowDown from "@/components/assets/ArrowDown";
 import ArrowUp from "@/components/assets/ArrowUp";
 import Image from "next/image";
-import { data } from "./data";
+import { data, platformData, tweets } from "./data";
 
 export default function Home() {
   return (
@@ -112,7 +112,7 @@ export default function Home() {
           </p>
         </div>
       </Wrapper>
-      <Wrapper classText="bg-white">
+      {/* <Wrapper classText="bg-white">
         <div className="py-[3rem] px-[1.125rem] font-bold text-[2.25rem] leading-[140%] lg:text-[4rem] lg:px-[3rem] lg:py-[5rem] xl:px-[5rem]">
           <span>Findtrend helps you to increase your </span>
           <span>productivity and reduce your computer&apos;s </span>
@@ -124,10 +124,10 @@ export default function Home() {
             fulfill your daily browsing needs.
           </span>
         </div>
-      </Wrapper>
-      <Wrapper classText="bg-white">
-        <div className="flex flex-col px-[1.125rem] py-[3rem] lg:py-[5rem] space-y-[2rem] md:space-y-[3rem]">
-          <h1 className="text-[2rem] font-bold flex flex-col text-center leading-[112%] text-black md:flex-row md:justify-center md:text-[3rem] xl:text-[4rem]">
+      </Wrapper> */}
+      {/* <Wrapper classText="bg-white">
+        <div className="flex flex-col px-[1.125rem] py-[3rem] lg:py-[5rem] xl:py-[6rem] space-y-[2rem] md:space-y-[3rem]">
+          <h1 className="text-[2rem] font-bold flex flex-col text-center leading-[112%] text-black md:flex-row md:justify-center md:text-[2.5rem] lg:text-[3rem] xl:text-[4rem]">
             <span>Findtrend make</span>
             <span className="space">+1000 Startup grow</span>
           </h1>
@@ -136,18 +136,76 @@ export default function Home() {
             {data.map((el, i) => (
               <div
                 key={i}
-                className="bg-[#F5F5F5] rounded-[8px] p-[1rem] flex justify-center items-center"
+                className="bg-[#F5F5F5] rounded-[8px] p-[1rem] flex justify-center items-center lg:p-[1.5rem]"
               >
                 <div>
                   <Image
                     src={`/${el.path}`}
                     alt={el.name}
-                    height={20}
-                    width={100}
+                    height={0}
+                    width={0}
+                    className="h-[23px] w-[100px] md:h-[30px] md:w-[120px]"
+                    sizes="100vw"
                   />
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </Wrapper>
+      <Wrapper classText="bg-[#FAFAFA] px-[1.125rem] py-[3rem] md:py-[4rem] lg:py-[5rem]">
+        <div className="space-y-[2rem] flex flex-col overflow-hidden md:space-y-[3rem] lg:space-y-[4rem]">
+          <h1 className="text-center text-black font-bold text-[2.25rem] leading-[112%] md:text-[2.5rem] lg:text-[3rem] xl:text-[4rem]">
+            All platform connect to Findtrend
+          </h1>
+
+          <div className="flex space-x-[1rem] overflow-scroll max-w-[700px] w-[100%]  mx-auto md:overflow-auto md:max-w-[800px] lg:space-x-[1.3rem]">
+            {platformData.map((el) => (
+              <div
+                key={el.name}
+                className="hover:bg-[#A8FF35] h-[64px] w-[64px] flex-none bg-[#fff] rounded-[8px] flex items-center justify-center md:flex-auto lg:h-[80px] lg:w-[80px]"
+              >
+                <Image
+                  src={`/${el.path}`}
+                  alt={el.name}
+                  height={0}
+                  width={0}
+                  className="h-[30px] w-[30px] lg:h-[40px] lg:w-[40px]"
+                  sizes="100vw"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="md:max-w-[600px] md:mx-auto xl:max-w-[800px] space-y-[1rem] md:space-y-[1.3rem]">
+            {tweets.map((el) => (
+              <div key={el.name} className="">
+                <Image
+                  src={`/${el.path}`}
+                  alt={""}
+                  height={300}
+                  width={400}
+                  className="h-[auto] w-[100%]"
+                  sizes="100vw"
+                />
+              </div>
+            ))}
+          </div>
+
+          <button className="mx-auto h-[44px] w-[152px] items-center justify-center rounded-[40px] text-[0.825rem] text-[#fff] bg-[#000] md:h-[57px] md:w-[198px] md:text-[1.125rem]">
+            View More Trend
+          </button>
+        </div>
+      </Wrapper> */}
+
+      <Wrapper classText="bg-black">
+        <div className="px-[1.125rem] py-[3rem]">
+          <h1 className="text-white text-center text-[2.25rem] font-bold leading-[112%]">Get your best deal</h1>
+
+          <div className="text-white">
+            <span>Monthly</span>
+            div
+            <span>Yearly</span>
           </div>
         </div>
       </Wrapper>

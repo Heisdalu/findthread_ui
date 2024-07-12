@@ -19,3 +19,19 @@ export const data: {
   { name: "algolia", path: "algolia.png" },
   { name: "heineken", path: "heineken.png" },
 ];
+
+export const platformData = [
+  { name: "facebook", path: "ds_facebook.png" },
+  { name: "twitter", path: "ds_twitter.png" },
+  { name: "dribble", path: "ds_dribble.png" },
+  { name: "pininterest", path: "ds_pin.png" },
+  { name: "medium", path: "ds_m.png" },
+  { name: "reddit", path: "ds_reddit.png" },
+  { name: "wiki", path: "ds_w.png" },
+  { name: "linkedin", path: "ds_linked.png" },
+];
+export const tweets = [
+  { name: "elon musk twwet", path: "tweet1.png" },
+  { name: "sawyer merritt tweet", path: "tweet2.png" },
+  { name: "elon musk reply tweet", path: "tweet1.png" },
+];
