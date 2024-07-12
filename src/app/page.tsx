@@ -9,7 +9,10 @@ import Close from "@/components/assets/Close";
 import ArrowDown from "@/components/assets/ArrowDown";
 import ArrowUp from "@/components/assets/ArrowUp";
 import Image from "next/image";
-import { data, platformData, tweets } from "./data";
+import { cards, data, platformData, tweets } from "./data";
+import ArrowReverse from "@/components/assets/ArrowReverse";
+import Tick from "@/components/assets/Tick";
+import Pricing from "@/components/Pricing/Pricing";
 
 export default function Home() {
   return (
@@ -199,13 +202,44 @@ export default function Home() {
       </Wrapper> */}
 
       <Wrapper classText="bg-black">
-        <div className="px-[1.125rem] py-[3rem]">
-          <h1 className="text-white text-center text-[2.25rem] font-bold leading-[112%]">Get your best deal</h1>
+        <div className="px-[1.125rem] py-[3rem] flex flex-col">
+          <h1 className="text-white text-center text-[2.25rem] font-bold leading-[112%] md:text-[3rem] lg:text-[4rem]">
+            Get your best deal
+          </h1>
 
-          <div className="text-white">
-            <span>Monthly</span>
-            div
-            <span>Yearly</span>
+          <div className="xs:flex-col mx-auto mt-[2rem] flex relative border-[1px] flex-wrap justify-center items-center space-x-[1.5rem] md:mt-[3rem]">
+            <span className="block text-[1.125rem] text-white md:text-[1.3rem] lg:text-[1.5rem]">
+              Monthly
+            </span>
+            <div className="bg-white h-[44px] w-[104px] rounded-[99px] md:h-[52px] flex items-center px-[10px]">
+              <div className="h-[28px] w-[28px] md:h-[36px] md:w-[36px] bg-[#A8FF35] rounded-[99px] translate-x-[0%]"></div>
+            </div>
+            <span className="block text-[1.125rem] !text-gray-500 md:text-[1.3rem] lg:text-[1.5rem]">
+              Yearly
+            </span>
+
+            <div className="top-[100%] absolute w-[64px] space-y-[1px] flex flex-col right-[1px] translate-y-[-5px] md:flex-col-reverse md:right-[auto] md:left-[100%] md:top-[50%] md:translate-x-[10px] md:translate-y-[-60%] md:space-y-[5px]">
+              <div className="translate-x-[1px] md:translate-x-[-10px]">
+                <span className="md:hidden">
+                  <ArrowReverse />
+                </span>
+                <span className="hidden md:block">
+                  <Arrow />
+                </span>
+              </div>
+              <div
+                className={`text-[0.75rem] text-white ${goodDogNew.className} mx-auto flex flex-col rotate-[6deg] md:text-[0.875rem] `}
+              >
+                <span>Save 10%</span>
+                <span>per month</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-[6rem] space-y-[1.5rem] mx-auto md:mt-[4rem] md:space-y-[2rem] lg:space-y-[0] lg:[grid-gap:2rem] lg:grid lg:grid-cols-3">
+            {cards.map((item, i) => (
+              <Pricing data={item} key={i} />
+            ))}
           </div>
         </div>
       </Wrapper>

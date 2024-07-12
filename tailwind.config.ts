@@ -8,6 +8,12 @@ const config: Config = {
   ],
   // screens: {},
   theme: {
+    extend: {
+      screens: {
+        xs: { max: "290px" },
+      },
+    },
+
     padding: {
       1: "1rem",
       2: "2rem",

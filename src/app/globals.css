@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.space {
-  margin-left: 7px;
-  display: block;
-}
+@layer components {
+  .space {
+    margin-left: 7px;
+    display: block;
+  }
 
-.remove_pad {
-  @apply lg:[padding:0];
-}
+  .remove_pad {
+    @apply lg:[padding:0];
+  }
 
-.fill svg path {
-  fill: black;
+  .fill svg path {
+    fill: black;
+  }
 }
