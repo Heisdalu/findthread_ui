@@ -13,6 +13,7 @@ import { cards, data, platformData, tweets } from "./data";
 import ArrowReverse from "@/components/assets/ArrowReverse";
 import Tick from "@/components/assets/Tick";
 import Pricing from "@/components/Pricing/Pricing";
+import BlackLogo from "@/components/assets/BlackLogo";
 
 export default function Home() {
   return (
@@ -115,7 +116,7 @@ export default function Home() {
           </p>
         </div>
       </Wrapper>
-      {/* <Wrapper classText="bg-white">
+      <Wrapper classText="bg-white">
         <div className="py-[3rem] px-[1.125rem] font-bold text-[2.25rem] leading-[140%] lg:text-[4rem] lg:px-[3rem] lg:py-[5rem] xl:px-[5rem]">
           <span>Findtrend helps you to increase your </span>
           <span>productivity and reduce your computer&apos;s </span>
@@ -127,8 +128,8 @@ export default function Home() {
             fulfill your daily browsing needs.
           </span>
         </div>
-      </Wrapper> */}
-      {/* <Wrapper classText="bg-white">
+      </Wrapper>
+      <Wrapper classText="bg-white">
         <div className="flex flex-col px-[1.125rem] py-[3rem] lg:py-[5rem] xl:py-[6rem] space-y-[2rem] md:space-y-[3rem]">
           <h1 className="text-[2rem] font-bold flex flex-col text-center leading-[112%] text-black md:flex-row md:justify-center md:text-[2.5rem] lg:text-[3rem] xl:text-[4rem]">
             <span>Findtrend make</span>
@@ -199,15 +200,15 @@ export default function Home() {
             View More Trend
           </button>
         </div>
-      </Wrapper> */}
+      </Wrapper>
 
       <Wrapper classText="bg-black">
-        <div className="px-[1.125rem] py-[3rem] flex flex-col">
+        <div className="px-[1.125rem] py-[3rem] md:py-[4rem] lg:py-[5rem] flex flex-col">
           <h1 className="text-white text-center text-[2.25rem] font-bold leading-[112%] md:text-[3rem] lg:text-[4rem]">
             Get your best deal
           </h1>
 
-          <div className="xs:flex-col mx-auto mt-[2rem] flex relative border-[1px] flex-wrap justify-center items-center space-x-[1.5rem] md:mt-[3rem]">
+          <div className="xs:flex-col mx-auto mt-[2rem] flex relative border-[1px] flex-wrap justify-center items-center space-x-[1.5rem] md:mt-[3rem] lg:mt-[4rem]">
             <span className="block text-[1.125rem] text-white md:text-[1.3rem] lg:text-[1.5rem]">
               Monthly
             </span>
@@ -241,6 +242,52 @@ export default function Home() {
               <Pricing data={item} key={i} />
             ))}
           </div>
+        </div>
+      </Wrapper>
+      <Wrapper classText="bg-[#A8FF35]">
+        <div className="px-[1.125rem] py-[3rem] md:py-[4rem] lg:py-[5rem] flex flex-col justify-center items-center">
+          <div className="flex flex-col space-y-[2rem] lg:space-y-[3rem]">
+            <h1 className="text-center flex flex-col text-[2.25rem] leading-[112%] font-bold md:text-[3rem] lg:text-[4.5rem]">
+              <span className="text-black">Join us on email for</span>
+              <span className="text-[#87D322]">more trending topics</span>
+            </h1>
+            <button className="font-bold mx-auto text-[0.875rem] rounded-[40px] text-white h-[44px] w-[106px] bg-black md:text-[1rem] md:h-[57px] md:w-[180px] lg:text-[1.125rem]">
+              Join Now
+            </button>
+          </div>
+        </div>
+      </Wrapper>
+
+      <Wrapper classText="bg-[#fff]">
+        <div className="px-[1.125rem] py-[3rem] flex flex-col justify-center items-center space-y-[3rem] md:py-[4rem] lg:py-[2rem] lg:flex-row lg:space-y-0 lg:justify-normal">
+          <h1 className="flex items-center space-x-[14px] ">
+            <span>
+              <BlackLogo />
+            </span>
+            <span className="font-bold text-[2rem] text-black">Findtread</span>
+          </h1>
+          <ul className="flex flex-col justify-center text-center space-y-[1.5rem] lg:flex-row lg:space-y-0 lg:ml-auto lg:space-x-[2rem]">
+            <li>
+              <a className="text-[1.125rem] text-black" href="#">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a className="text-[1.125rem] text-black" href="#">
+                Terms and Conditions
+              </a>
+            </li>
+            <li>
+              <a className="text-[1.125rem] text-black" href="#">
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a className="text-[1.125rem] text-black" href="#">
+                Careers
+              </a>
+            </li>
+          </ul>
         </div>
       </Wrapper>
     </div>
