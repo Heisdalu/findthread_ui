@@ -1,4 +1,5 @@
-import HamBurger from "@/components/HamBurger/HamBurger";
+"use client";
+
 import Label from "@/components/Labels/Label";
 import Arrow from "@/components/assets/Arrow";
 import Logo from "@/components/assets/Logo";
@@ -11,11 +12,25 @@ import ArrowUp from "@/components/assets/ArrowUp";
 import Image from "next/image";
 import { cards, data, platformData, tweets } from "./data";
 import ArrowReverse from "@/components/assets/ArrowReverse";
-import Tick from "@/components/assets/Tick";
 import Pricing from "@/components/Pricing/Pricing";
 import BlackLogo from "@/components/assets/BlackLogo";
+import { useEffect } from "react";
+
+let ctx: boolean | null = null;
+
+if (typeof window !== "undefined") {
+  window.addEventListener("load", () => {
+    // contentLoaded = true;
+    ctx = true;
+    console.log("loaded completely");
+  });
+}
 
 export default function Home() {
+  useEffect(() => {
+    console.log(ctx);
+  }, []);
+
   return (
     <div>
       <div className="bg-black relative">
@@ -117,7 +132,7 @@ export default function Home() {
         </div>
       </Wrapper>
       <Wrapper classText="bg-white">
-        <div className="py-[3rem] px-[1.125rem] font-bold text-[2.25rem] leading-[140%] lg:text-[4rem] lg:px-[3rem] lg:py-[5rem] xl:px-[5rem]">
+        <div className="py-[3rem] px-[1.125rem] font-bold text-[2.25rem] leading-[140%] lg:text-[4rem] md:px-[1.5rem] lg:px-[3rem] lg:py-[5rem] xl:px-[5rem]">
           <span>Findtrend helps you to increase your </span>
           <span>productivity and reduce your computer&apos;s </span>
           <span>
@@ -130,7 +145,7 @@ export default function Home() {
         </div>
       </Wrapper>
       <Wrapper classText="bg-white">
-        <div className="flex flex-col px-[1.125rem] py-[3rem] lg:py-[5rem] xl:py-[6rem] space-y-[2rem] md:space-y-[3rem]">
+        <div className="flex flex-col px-[1.125rem] py-[3rem] lg:py-[5rem] xl:py-[6rem] space-y-[2rem] md:space-y-[3rem] md:px-[1.5rem] lg:px-[3rem]">
           <h1 className="text-[2rem] font-bold flex flex-col text-center leading-[112%] text-black md:flex-row md:justify-center md:text-[2.5rem] lg:text-[3rem] xl:text-[4rem]">
             <span>Findtrend make</span>
             <span className="space">+1000 Startup grow</span>
@@ -148,6 +163,7 @@ export default function Home() {
                     alt={el.name}
                     height={0}
                     width={0}
+                    loading="eager"
                     className="h-[23px] w-[100px] md:h-[30px] md:w-[120px]"
                     sizes="100vw"
                   />
@@ -175,6 +191,7 @@ export default function Home() {
                   height={0}
                   width={0}
                   className="h-[30px] w-[30px] lg:h-[40px] lg:w-[40px]"
+                  loading="eager"
                   sizes="100vw"
                 />
               </div>
@@ -190,6 +207,7 @@ export default function Home() {
                   height={300}
                   width={400}
                   className="h-[auto] w-[100%]"
+                  loading="eager"
                   sizes="100vw"
                 />
               </div>
@@ -203,7 +221,7 @@ export default function Home() {
       </Wrapper>
 
       <Wrapper classText="bg-black">
-        <div className="px-[1.125rem] py-[3rem] md:py-[4rem] lg:py-[5rem] flex flex-col">
+        <div className="px-[1.125rem] py-[3rem] md:py-[4rem] md:px-[1.5rem] lg:px-[3rem] lg:py-[5rem] flex flex-col">
           <h1 className="text-white text-center text-[2.25rem] font-bold leading-[112%] md:text-[3rem] lg:text-[4rem]">
             Get your best deal
           </h1>
@@ -245,7 +263,7 @@ export default function Home() {
         </div>
       </Wrapper>
       <Wrapper classText="bg-[#A8FF35]">
-        <div className="px-[1.125rem] py-[3rem] md:py-[4rem] lg:py-[5rem] flex flex-col justify-center items-center">
+        <div className="px-[1.125rem] py-[3rem] md:py-[4rem] md:px-[1.5rem] lg:px-[3rem] lg:py-[5rem] flex flex-col justify-center items-center">
           <div className="flex flex-col space-y-[2rem] lg:space-y-[3rem]">
             <h1 className="text-center flex flex-col text-[2.25rem] leading-[112%] font-bold md:text-[3rem] lg:text-[4.5rem]">
               <span className="text-black">Join us on email for</span>
@@ -259,7 +277,7 @@ export default function Home() {
       </Wrapper>
 
       <Wrapper classText="bg-[#fff]">
-        <div className="px-[1.125rem] py-[3rem] flex flex-col justify-center items-center space-y-[3rem] md:py-[4rem] lg:py-[2rem] lg:flex-row lg:space-y-0 lg:justify-normal">
+        <div className="px-[1.125rem] py-[3rem] flex flex-col justify-center items-center space-y-[3rem] md:py-[4rem] md:px-[1.5rem] lg:px-[3rem] lg:py-[2rem] lg:flex-row lg:space-y-0 lg:justify-normal">
           <h1 className="flex items-center space-x-[14px] ">
             <span>
               <BlackLogo />

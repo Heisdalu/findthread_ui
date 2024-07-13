@@ -16,7 +16,8 @@ function NavBar() {
         </div>
       </div>
       {true && (
-        <nav className="text-[1.125rem] space-y-[1.5rem] py-[3rem] fixed top-[90px] w-full h-[100vh] bg-black flex flex-col items-center !z-[7] lg:top-[auto] lg:h-[auto] lg:w-[auto] lg:flex-row lg:space-y-0 !lg:py-[0] lg:absolute lg:left-[50%] lg:translate-x-[-50%] remove_pad">
+        // z-index -1 and 7
+        <nav className="text-[1.125rem] z-[-1] space-y-[1.5rem] py-[3rem] fixed top-[90px] w-full h-[100vh] bg-black flex flex-col items-center lg:!z-[7] lg:top-[auto] lg:h-[auto] lg:w-[auto] lg:flex-row lg:space-y-0 !lg:py-[0] lg:absolute lg:left-[50%] lg:translate-x-[-50%] remove_pad">
           <ul className="lg:flex lg:space-y-0 space-y-[1.5rem] text-center capitalize lg:space-x-[2.5rem]">
             <li>
               <a href="#" className="text-white">
