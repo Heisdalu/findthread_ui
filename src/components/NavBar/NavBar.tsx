@@ -4,13 +4,18 @@ import Logo from "../assets/Logo";
 function NavBar() {
   return (
     <>
-      <div className=" z-[10] border-[1px] px-[1.125rem] py-[1.5rem] flex items-center">
-        <Logo />
+      <div className=" z-[10] border-[1px] px-[1.125rem] py-[1.5rem] flex items-center md:px-[1.5rem] lg:px-[0]">
+        <div className="flex items-center space-x-[14px] ">
+          <Logo />
+          <span className="text-white hidden lg:block lg:leading- text-[1.5rem]">
+            Findtrend
+          </span>
+        </div>
         <div className="ml-auto lg:hidden">
           <HamBurger />
         </div>
       </div>
-      {false && (
+      {true && (
         <nav className="text-[1.125rem] space-y-[1.5rem] py-[3rem] fixed top-[90px] w-full h-[100vh] bg-black flex flex-col items-center !z-[7] lg:top-[auto] lg:h-[auto] lg:w-[auto] lg:flex-row lg:space-y-0 !lg:py-[0] lg:absolute lg:left-[50%] lg:translate-x-[-50%] remove_pad">
           <ul className="lg:flex lg:space-y-0 space-y-[1.5rem] text-center capitalize lg:space-x-[2.5rem]">
             <li>
@@ -54,7 +59,10 @@ function NavBar() {
         <a href="#" className="text-white capitalize">
           login
         </a>
-        <a href="#" className="flex items-center justify-center capitalize h-[42px] w-[132px] text-black bg-white rounded-[40px]">
+        <a
+          href="#"
+          className="flex items-center justify-center capitalize h-[42px] w-[132px] text-black bg-white rounded-[40px]"
+        >
           Register
         </a>
       </div>

@@ -20,7 +20,7 @@ export default function Home() {
     <div>
       <div className="bg-black relative">
         <div className="xl:max-w-[1400px] xl:mx-auto h-[100%] bg-no-repeat bg-center bg-hero-sm-pattern md:bg-hero-lg-pattern">
-          <div className="relative lg:py-[1rem] lg:pr-[2rem] xl:px-[3rem] lg:flex lg:justify-between items-center">
+          <div className="relative lg:py-[1rem] lg:px-[3rem] xl:px-[3rem] lg:flex lg:justify-between items-center">
             <NavBar />
           </div>
 
