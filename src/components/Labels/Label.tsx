@@ -1,4 +1,5 @@
 import Tag from "./Tag";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -27,9 +28,24 @@ const data = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 function Label() {
   return (
-    <div className="border-[1px] border-white space-y-[5px] flex flex-col xl:flex-row ">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      className="border-[1px] border-white space-y-[5px] flex flex-col xl:flex-row "
+    >
       {data.map((el) => (
         <Tag
           name={el.name}
@@ -38,7 +54,7 @@ function Label() {
           classText={el.classText}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
 export default Label;

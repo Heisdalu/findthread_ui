@@ -2,6 +2,12 @@
 
 import Image from "next/image";
 import Close from "../assets/Close";
+import { motion } from "framer-motion";
+
+const childVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 
 function Tag({
   name,
@@ -13,7 +19,8 @@ function Tag({
   classText: string;
 }) {
   return (
-    <div
+    <motion.div
+      variants={childVariants}
       className={`${classText} px-[1rem] flex items-center justify-center text-[1.2775rem] space-x-[1rem] bg-[#181818] max-w-[290px] h-[70px] shadow-[3px_12px_5px_0px_rgba(0,0,0,0.75)] md:text-[1.3rem] xl:w-[300px] xl:px-[0]`}
     >
       <div>
@@ -31,7 +38,7 @@ function Tag({
       <div>
         <Close />
       </div>
-    </div>
+    </motion.div>
   );
 }
 export default Tag;
