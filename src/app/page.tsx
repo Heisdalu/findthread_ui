@@ -14,25 +14,21 @@ import { cards, data, platformData, tweets } from "./data";
 import ArrowReverse from "@/components/assets/ArrowReverse";
 import Pricing from "@/components/Pricing/Pricing";
 import BlackLogo from "@/components/assets/BlackLogo";
-import { useEffect } from "react";
-
-let ctx: boolean | null = null;
-
-if (typeof window !== "undefined") {
-  window.addEventListener("load", () => {
-    // contentLoaded = true;
-    ctx = true;
-    console.log("loaded completely");
-  });
-}
+import {  useState } from "react";
+import { motion, Variants } from "framer-motion";
+import useView from "@/hooks/useView";
+import Overlay from "@/components/Overlay/Overlay";
+import { parentVariant, childVariant, headerP, animateFunc } from "@/utils";
 
 export default function Home() {
-  useEffect(() => {
-    console.log(ctx);
-  }, []);
+  // const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const { isViewed, ref } = useView();
+  const { isViewed: labelisViewed, ref: labelRef } = useView(0.5);
+  const [open, setOpen] = useState(false);
 
   return (
     <div>
+      <Overlay open={open} toggleOpen={setOpen} />
       <div className="bg-black relative">
         <div className="xl:max-w-[1400px] xl:mx-auto h-[100%] bg-no-repeat bg-center bg-hero-sm-pattern md:bg-hero-lg-pattern">
           <div className="relative lg:py-[1rem] lg:px-[3rem] xl:px-[3rem] lg:flex lg:justify-between items-center">
@@ -40,12 +36,29 @@ export default function Home() {
           </div>
 
           <header className="flex flex-col py-[2rem] px-[1rem] space-y-[1rem]">
-            <h1 className="text-white text-center font-[700] text-[2.25rem] flex flex-col md:text-[3.7rem] lg:text-[4.5rem]">
-              <span className="leading-[112%]">Minimize your tabs.</span>
-              <span className="leading-[112%]">Find the trends!</span>
-            </h1>
+            <motion.h1
+              variants={parentVariant}
+              ref={ref}
+              initial="hidden"
+              animate={isViewed && open ? "show" : ""}
+              // whileInView="show"
+              className="text-white text-center font-[700] text-[2.25rem] flex flex-col md:text-[3.7rem] lg:text-[4.5rem]"
+            >
+              <motion.span variants={childVariant} className="leading-[112%]">
+                Minimize your tabs.
+              </motion.span>
+              <motion.span variants={childVariant} className="leading-[112%]">
+                Find the trends!
+              </motion.span>
+            </motion.h1>
 
-            <p className="text-[#8B8B8B] font-normal text-[0.875rem] text-center space-y-[0.3rem] md:space-y-0 md:text-[1rem] lg:text-[1.125rem]">
+            <motion.p
+              // initial={{ opacity: 0 }}
+              variants={animateFunc(0.5)}
+              initial="hide"
+              animate={isViewed && open ? "show" : ""}
+              className="text-[#8B8B8B] font-normal text-[0.875rem] text-center space-y-[0.3rem] md:space-y-0 md:text-[1rem] lg:text-[1.125rem]"
+            >
               <span className="flex flex-col md:flex-row justify-center md:space-x-[0.3rem]">
                 <span>Don’t let your computer memories consumes</span>
                 <span>all of those browser tabs.</span>
@@ -54,9 +67,14 @@ export default function Home() {
                 <span>Findtrend let you gathers all of your favorite</span>
                 <span>website into one place.</span>
               </span>
-            </p>
+            </motion.p>
 
-            <div className="m-auto py-[1.3rem] md:py-[1.5rem] flex relative xl:py-[2rem]">
+            <motion.div
+              variants={animateFunc(0.7)}
+              initial="hide"
+              animate={isViewed && open ? "show" : ""}
+              className="m-auto py-[1.3rem] md:py-[1.5rem] flex relative xl:py-[2rem]"
+            >
               <button className="rounded-[2.5rem] text-[0.875rem] font-bold h-[44px] w-[139px] bg-[#A8FF35] md:h-[57px] md:w-[180px] md:text-[1rem] lg:text-[1.125rem]">
                 Get Started 🔥
               </button>
@@ -72,10 +90,10 @@ export default function Home() {
                   <Arrow />
                 </span>
               </div>
-            </div>
+            </motion.div>
 
             <div className="py-[2rem] flex justify-center items-center xl:max-w-[1100px] m-auto xl:pb-[5rem] ">
-              <Label />
+              <Label label={labelRef} viewed={labelisViewed} parentView={open} />
             </div>
           </header>
         </div>

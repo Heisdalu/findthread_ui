@@ -15,4 +15,9 @@
   .fill svg path {
     fill: black;
   }
+
+  .checking span span span {
+    transform: translateY(20px);
+    opacity: 0;
+  }
 }

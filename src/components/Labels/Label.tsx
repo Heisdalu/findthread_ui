@@ -1,5 +1,5 @@
 import Tag from "./Tag";
-import { motion } from "framer-motion";
+import { Variants, delay, motion } from "framer-motion";
 
 const data = [
   {
@@ -28,22 +28,32 @@ const data = [
   },
 ];
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
+      delayChildren: 1,
     },
   },
 };
 
-function Label() {
+function Label({
+  label,
+  viewed,
+  parentView,
+}: {
+  label: any;
+  viewed: boolean;
+  parentView: boolean;
+}) {
   return (
     <motion.div
+      ref={label}
       variants={container}
       initial="hidden"
-      whileInView="visible"
+      animate={parentView && viewed ? "visible" : ""}
       className="border-[1px] border-white space-y-[5px] flex flex-col xl:flex-row "
     >
       {data.map((el) => (
