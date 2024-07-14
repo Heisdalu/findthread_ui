@@ -18,7 +18,7 @@ function AnimatedText({
         opacity: 1,
         transition: {
           duration: 0.5,
-          delay: (value + start) * 0.05,
+          delay: (value + start) * 0.02,
           ease: "linear",
         },
       },
