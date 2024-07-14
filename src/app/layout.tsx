@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={effra.className}>{children}</body>
+      <body className={`${effra.className} overflow-hidden`}>{children}</body>
     </html>
   );
 }

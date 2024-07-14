@@ -1,6 +1,6 @@
 "use client";
 
-import { childVariant, secondHeaderVariant } from "@/utils";
+import { secondHeaderVariant } from "@/utils";
 import Wrapper from "../Wrapper/Wrapper";
 import { delay, motion, Variants } from "framer-motion";
 import { goodDogNew } from "@/app/font";

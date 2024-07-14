@@ -56,7 +56,7 @@ export default function Home() {
 
             <motion.p
               // initial={{ opacity: 0 }}
-              variants={animateFunc(0.5)}
+              variants={animateFunc(0.7)}
               initial="hide"
               animate={isViewed && open ? "show" : ""}
               className="text-[#8B8B8B] font-normal text-[0.875rem] text-center space-y-[0.3rem] md:space-y-0 md:text-[1rem] lg:text-[1.125rem]"
@@ -72,7 +72,7 @@ export default function Home() {
             </motion.p>
 
             <motion.div
-              variants={animateFunc(0.7)}
+              variants={animateFunc(0.9)}
               initial="hide"
               animate={isViewed && open ? "show" : ""}
               className="m-auto py-[1.3rem] md:py-[1.5rem] flex relative xl:py-[2rem]"

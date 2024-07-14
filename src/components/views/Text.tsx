@@ -1,7 +1,6 @@
 import useView from "@/hooks/useView";
 import AnimatedText from "../AnimatedText/AnimatedText";
 import Wrapper from "../Wrapper/Wrapper";
-import { motion, Variants } from "framer-motion";
 
 function Text({ open }: { open: boolean }) {
   const { isViewed, ref } = useView(0.5);

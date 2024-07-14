@@ -8,6 +8,7 @@ export const parentVariant: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
+      delayChildren: 0.5,
       ease: "easeIn",
     },
   },
