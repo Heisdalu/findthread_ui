@@ -15,7 +15,7 @@ export const parentVariant: Variants = {
 
 export const childVariant: Variants = {
   hidden: {
-    y: 20,
+    y: 30,
     opacity: 0,
   },
   show: {
@@ -46,6 +46,20 @@ export const headerP: Variants = {
     opacity: 1,
     transition: {
       delay: 0.5,
+    },
+  },
+};
+
+export const secondHeaderVariant: Variants = {
+  hide: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeIn",
     },
   },
 };

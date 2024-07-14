@@ -14,11 +14,12 @@ import { cards, data, platformData, tweets } from "./data";
 import ArrowReverse from "@/components/assets/ArrowReverse";
 import Pricing from "@/components/Pricing/Pricing";
 import BlackLogo from "@/components/assets/BlackLogo";
-import {  useState } from "react";
+import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import useView from "@/hooks/useView";
 import Overlay from "@/components/Overlay/Overlay";
 import { parentVariant, childVariant, headerP, animateFunc } from "@/utils";
+import SecondHeader from "@/components/views/SecondHeader";
 
 export default function Home() {
   // const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -93,62 +94,17 @@ export default function Home() {
             </motion.div>
 
             <div className="py-[2rem] flex justify-center items-center xl:max-w-[1100px] m-auto xl:pb-[5rem] ">
-              <Label label={labelRef} viewed={labelisViewed} parentView={open} />
+              <Label
+                label={labelRef}
+                viewed={labelisViewed}
+                parentView={open}
+              />
             </div>
           </header>
         </div>
       </div>
 
-      <Wrapper classText="bg-[#A8FF35] w-full">
-        <div className="py-[5rem]  px-[1.125rem] md:py-[6rem] xl:py-[8rem]">
-          <h1 className=" text-center leading-[112%] font-bold text-[2rem] [text-shadow:0_3px_2px_#00000099] md:text-[2.5rem] xl:text-[4.5rem]">
-            Open new tabs is sh*t
-          </h1>
-
-          <div className="bg-white my-[5.5rem] relative rounded-[14px] p-[1.5rem] max-w-[350px] mx-auto md:max-w-[500px] md:p-[3rem] xl:p-[4rem] lg:my-[4rem]">
-            <div className="space-y-[5px] absolute bottom-[93%] right-[0] w-[99px] text-center lg:right-[auto] lg:left-[100%] lg:translate-x-[40px] lg:bottom-[auto] lg:top-[50%] lg:translate-y-[-50%]">
-              <span
-                className={`${goodDogNew.className} leading-[112%] md:text-[0.875rem] block text-[0.75rem] text-black rotate-[6deg]`}
-              >
-                You just need one tab now
-              </span>
-              <span className="block translate-x-[-7px]">
-                <span className="lg:hidden">
-                  <ArrowDown />
-                </span>
-                <span className="fill hidden lg:block">
-                  <Arrow />
-                </span>
-              </span>
-            </div>
-            <div className="bg-[#030303] text-white space-x-[1rem] flex items-center justify-center py-[1.5rem]">
-              <span className="*:w-[27px] *:h-[27px]">
-                <Logo />
-              </span>
-              <span>Findtrend - Elon Musk</span>
-              <Close />
-            </div>
-
-            <div className="space-y-[3px] absolute top-[85%] left-[0] text-center flex flex-col items-center lg:top-[50%] lg:translate-y-[-50%] lg:left-[auto] lg:w-[95px] lg:right-[100%] lg:translate-x-[-30px]">
-              <span className="block lg:rotate-[40deg] ml-auto">
-                <ArrowUp />
-              </span>
-              <span
-                className={`${goodDogNew.className} md:text-[0.875rem] flex flex-col leading-[112%] text-[0.75rem] text-black rotate-[6deg]`}
-              >
-                <span> solution for</span>
-                <span>discover a trend</span>
-              </span>
-            </div>
-          </div>
-
-          <p className="text-center max-w-[600px] mx-auto leading-[150%] text-[0.875rem] md:text-[1.125rem]">
-            A solution for your browser tabs and don’t make your device get
-            slower over time. Get ease and faster to discover a trend with just
-            one tab.
-          </p>
-        </div>
-      </Wrapper>
+      <SecondHeader open={open} />
       <Wrapper classText="bg-white">
         <div className="py-[3rem] px-[1.125rem] font-bold text-[2.25rem] leading-[140%] lg:text-[4rem] md:px-[1.5rem] lg:px-[3rem] lg:py-[5rem] xl:px-[5rem]">
           <span>Findtrend helps you to increase your </span>
