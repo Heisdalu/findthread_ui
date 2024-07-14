@@ -20,6 +20,7 @@ import useView from "@/hooks/useView";
 import Overlay from "@/components/Overlay/Overlay";
 import { parentVariant, childVariant, headerP, animateFunc } from "@/utils";
 import SecondHeader from "@/components/views/SecondHeader";
+import Text from "@/components/views/Text";
 
 export default function Home() {
   // const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -105,19 +106,7 @@ export default function Home() {
       </div>
 
       <SecondHeader open={open} />
-      <Wrapper classText="bg-white">
-        <div className="py-[3rem] px-[1.125rem] font-bold text-[2.25rem] leading-[140%] lg:text-[4rem] md:px-[1.5rem] lg:px-[3rem] lg:py-[5rem] xl:px-[5rem]">
-          <span>Findtrend helps you to increase your </span>
-          <span>productivity and reduce your computer&apos;s </span>
-          <span>
-            memory load,{" "}
-            <span className="text-[#ADADAD]"> an application that can </span>
-          </span>
-          <span className="text-[#ADADAD]">
-            fulfill your daily browsing needs.
-          </span>
-        </div>
-      </Wrapper>
+      <Text open={open} />
       <Wrapper classText="bg-white">
         <div className="flex flex-col px-[1.125rem] py-[3rem] lg:py-[5rem] xl:py-[6rem] space-y-[2rem] md:space-y-[3rem] md:px-[1.5rem] lg:px-[3rem]">
           <h1 className="text-[2rem] font-bold flex flex-col text-center leading-[112%] text-black md:flex-row md:justify-center md:text-[2.5rem] lg:text-[3rem] xl:text-[4rem]">
