@@ -1,24 +1,12 @@
+"use client";
 import { useEffect } from "react";
 
-let ctx: boolean | null = null;
-
-if (typeof window !== "undefined") {
-  window.addEventListener("load", () => {
-    // contentLoaded = true;
-    if (document.body) {
-      document.body.classList.remove("overflow-hidden");
-    }
-    ctx = true;
-  });
-}
-
 function Overlay({ open, toggleOpen }: { open: boolean; toggleOpen: any }) {
-
   useEffect(() => {
-    console.log(ctx);
-    if (ctx) {
+    if (typeof window !== "undefined") {
+      document.body.classList.remove("overflow-hidden");
+      console.log("yssssss");
       toggleOpen(true);
-      //   console.log("done loading");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
