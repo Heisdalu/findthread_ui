@@ -3,11 +3,16 @@ import { useEffect } from "react";
 
 function Overlay({ open, toggleOpen }: { open: boolean; toggleOpen: any }) {
   useEffect(() => {
+    let timer: string | number | NodeJS.Timeout | undefined;
     if (typeof window !== "undefined") {
-      document.body.classList.remove("overflow-hidden");
-      console.log("yssssss");
-      toggleOpen(true);
+      timer = setTimeout(() => {
+        document.body.classList.remove("overflow-hidden");
+        console.log("yssssss");
+        toggleOpen(true);
+      }, 4000);
     }
+
+    return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
